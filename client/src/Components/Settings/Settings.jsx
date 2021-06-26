@@ -1,28 +1,77 @@
 import React, { Component } from "react";
+import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import Slider from '@material-ui/core/Slider';
+import Input from '@material-ui/core/Input';
 import styles from "./Settings.module.css";
 
-export default class Settings extends Component {
-    constructor(props) {
-        super(props);
-    }
 
-    render() {
-        return (
-            <div className={styles.main}>
-                <div className={styles.title}>
-                    Choose your Speeed and sizes for targets!
-                    <hr />
-                </div>
-                <div className={styles.row} >
-                    Speed:
-                    <div className={styles.speedSlider}>
-                        <input type="range" min="1" max="100" className={styles.slider} />
-                    </div>
-                </div>
-                <div className={styles.row} >
-                    Size:
-                </div>
+const useStyles = makeStyles({
+    root: {
+      width: 250,
+    },
+    input: {
+      width: 42,
+    },
+  });
+  
+  export default function InputSlider() {
+    const classes = useStyles();
+    const [value, setValue] = React.useState(30);
+  
+    const handleSliderChange = (event, newValue) => {
+      setValue(newValue);
+    };
+  
+    const handleInputChange = (event) => {
+      setValue(event.target.value === '' ? '' : Number(event.target.value));
+    };
+  
+    const handleBlur = () => {
+      if (value < 0) {
+        setValue(0);
+      } else if (value > 100) {
+        setValue(100);
+      }
+    };
+  
+    return (
+        <div className={styles.main}>
+            <div className={styles.title}>
+                Choose your Speed and Size for targets!
+                <hr />
             </div>
-        )
-    }
-}
+            <div className={classes.root}>
+                <Typography id="input-slider" gutterBottom>
+                Volume
+                </Typography>
+                <Grid container spacing={2} alignItems="center">
+                <Grid item xs>
+                    <Slider
+                    value={typeof value === 'number' ? value : 0}
+                    onChange={handleSliderChange}
+                    aria-labelledby="input-slider"
+                    />
+                </Grid>
+                <Grid item>
+                    <Input
+                    className={classes.input}
+                    value={value}
+                    margin="dense"
+                    onChange={handleInputChange}
+                    onBlur={handleBlur}
+                    inputProps={{
+                        step: 10,
+                        min: 0,
+                        max: 100,
+                        type: 'number',
+                        'aria-labelledby': 'input-slider',
+                    }}
+                    />
+                </Grid>
+                </Grid>
+            </div>
+        </div>
+    );
+  }
