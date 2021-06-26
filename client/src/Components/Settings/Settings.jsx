@@ -44,7 +44,7 @@ const useStyles = makeStyles({
             </div>
             <div className={classes.root}>
                 <Typography id="input-slider" gutterBottom>
-                Volume
+                Speed
                 </Typography>
                 <Grid container spacing={2} alignItems="center">
                 <Grid item xs>
