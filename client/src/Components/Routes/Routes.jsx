@@ -5,6 +5,7 @@ import MapPage  from "../MapPage/MapPage";
 import CrossHair from "../CrossHair/CrossHair";
 import Transitions from "../Transition/Transition";
 import Results from "../Results/Results";
+import Training from "../Training/Training";
 
 export default function Routes() {
     return (
@@ -32,6 +33,9 @@ export default function Routes() {
             </Route>
             <Route exact path="/results">
                 <Results />
+            </Route>
+            <Route exact path="/training">
+                <Training />
             </Route>
         </Switch>
     )
