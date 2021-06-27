@@ -4,6 +4,7 @@ import Starter from "../Starter/Starter";
 import MapPage  from "../MapPage/MapPage";
 import CrossHair from "../CrossHair/CrossHair";
 import Transitions from "../Transition/Transition";
+import Results from "../Results/Results";
 
 export default function Routes() {
     return (
@@ -28,6 +29,9 @@ export default function Routes() {
             </Route>
             <Route exact path="/transition">
                 <Transitions key={1}/>
+            </Route>
+            <Route exact path="/results">
+                <Results />
             </Route>
         </Switch>
     )

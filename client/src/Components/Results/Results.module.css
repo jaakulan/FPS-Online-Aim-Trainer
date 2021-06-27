@@ -1,0 +1,26 @@
+.main {
+    background-color: red;
+    color: white;
+    padding-top: 60px;
+    padding-bottom: 25%;
+    padding-left: 60px;
+    padding-right: 60px;
+    font-size: 60px;
+    font-family: "fixedsys";
+}
+
+.title {
+    font-size: 70px;
+    text-align: center;
+    padding: 40px;
+}
+
+.result {
+    text-align: center;
+    color: #52eb34;
+}
+
+.redirect {
+    text-decoration: none;
+    color: black;
+}
