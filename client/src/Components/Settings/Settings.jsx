@@ -56,6 +56,22 @@ export default function InputSlider() {
     }
   };
 
+  const handleSizeSliderChange = (event, newValue) => {
+    setSize(newValue);
+  };
+
+  const handleSizeInputChange = (event) => {
+    setSize(event.target.value === '' ? '' : Number(event.target.value));
+  };
+
+  const handleSizeBlur = () => {
+    if (size < 0) {
+      setSize(0);
+    } else if (size > 100) {
+      setSize(100);
+    }
+  };
+
   return (
       <div className={styles.main}>
           <div className={styles.title}>
@@ -63,14 +79,14 @@ export default function InputSlider() {
               <hr />
           </div>
           <div className={classes.root}>
-              <Typography id="input-slider" gutterBottom>
-              Speed
+              <Typography id="input-slider" gutterBottom className={styles.labels}>
+                <p className={styles.labels}>Speed</p>
               </Typography>
               <Grid container spacing={2} alignItems="center">
               <Grid item xs>
                 <ThemeProvider theme={muiTheme}>
                   <Slider
-                  value={typeof value === 'number' ? speed : 0}
+                  value={speed}
                   onChange={handleSliderChange}
                   aria-labelledby="input-slider"
                   />
@@ -83,6 +99,38 @@ export default function InputSlider() {
                   margin="dense"
                   onChange={handleInputChange}
                   onBlur={handleBlur}
+                  inputProps={{
+                      step: 10,
+                      min: 0,
+                      max: 100,
+                      type: 'number',
+                      'aria-labelledby': 'input-slider',
+                  }}
+                  />
+              </Grid>
+              </Grid>
+          </div>
+          <div className={classes.root}>
+              <Typography id="input-slider" gutterBottom >
+                <p className={styles.labels}>Size</p>
+              </Typography>
+              <Grid container spacing={2} alignItems="center">
+              <Grid item xs>
+                <ThemeProvider theme={muiTheme}>
+                  <Slider
+                  value={size}
+                  onChange={handleSizeSliderChange}
+                  aria-labelledby="input-slider"
+                  />
+                </ThemeProvider>
+              </Grid>
+              <Grid item>
+                  <Input
+                  className={styles.input}
+                  value={size}
+                  margin="dense"
+                  onChange={handleSizeInputChange}
+                  onBlur={handleSizeBlur}
                   inputProps={{
                       step: 10,
                       min: 0,

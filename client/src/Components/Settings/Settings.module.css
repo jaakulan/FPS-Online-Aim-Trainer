@@ -54,3 +54,8 @@
     width: 50px;
     background-color: white;
   }
+
+  .labels {
+    font-family: "fixedsys";
+    font-size: 30px;
+  }
