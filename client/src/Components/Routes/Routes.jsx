@@ -3,6 +3,7 @@ import { Redirect, Route, Switch } from "react-router-dom";
 import Starter from "../Starter/Starter";
 import MapPage  from "../MapPage/MapPage";
 import CrossHair from "../CrossHair/CrossHair";
+import Settings from "../Settings/Settings";
 import Transitions from "../Transition/Transition";
 import Results from "../Results/Results";
 import Training from "../Training/Training";
@@ -27,6 +28,9 @@ export default function Routes() {
             </Route>
             <Route exact path="/crosshair">
                 <CrossHair />
+            </Route>
+            <Route exact path="/settings">
+                <Settings />
             </Route>
             <Route exact path="/transition">
                 <Transitions key={1}/>
