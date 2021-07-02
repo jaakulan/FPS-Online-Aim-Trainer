@@ -30,6 +30,9 @@ export default class MapPage extends Component {
                     <hr/>
                     <img src={CSGOMap} className={styles.map}/>
                 </div>
+                <div className={styles.next}>
+                    <a href="/crosshair" className={styles.link}>Next</a>
+                </div>
             </div>
         )
     }

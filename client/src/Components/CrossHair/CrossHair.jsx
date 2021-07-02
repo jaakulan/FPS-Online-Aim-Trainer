@@ -45,6 +45,9 @@ export default class CrossHair extends Component {
                         <img src={Crosshair3} className={styles.crosshair} />
                     </div>
                 </div>
+                <div className={styles.next}>
+                    <a href="/settings" className={styles.link}>Next</a>
+                </div>
             </div>
         )
     }
