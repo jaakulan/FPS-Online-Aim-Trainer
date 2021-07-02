@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styles from "./Transition.module.css";
+import backgroundImage from "../../Assets/Images/BackgroundImage.png";
 
 export default class Transition extends Component {
     constructor(props) {
@@ -25,6 +26,7 @@ export default class Transition extends Component {
     render() {
         return (
             <div className={styles.main}>
+                <img src={backgroundImage} className={styles.image}/>
                 <div className={styles.title}>
                     Shoot the targets as they appear! As fast as you can, it will only take 1 bullet
                     (click). Targets will be smiley faces of different sizes! Good Luck!

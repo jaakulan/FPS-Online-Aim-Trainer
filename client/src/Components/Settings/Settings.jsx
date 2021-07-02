@@ -6,6 +6,7 @@ import Slider from '@material-ui/core/Slider';
 import Input from '@material-ui/core/Input';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
+import backgroundImage from "../../Assets/Images/BackgroundImage.png";
 import styles from "./Settings.module.css";
 
 
@@ -74,11 +75,12 @@ export default function InputSlider() {
 
   return (
       <div className={styles.main}>
+          <img src={backgroundImage} className={styles.image}/>
           <div className={styles.title}>
               Choose your Speed and Size for targets!
               <hr />
           </div>
-          <div className={classes.root}>
+          <div className={`${classes.root} ${styles.sliderspace}`}>
               <Typography id="input-slider" gutterBottom className={styles.labels}>
                 <p className={styles.labels}>Speed</p>
               </Typography>
@@ -110,7 +112,7 @@ export default function InputSlider() {
               </Grid>
               </Grid>
           </div>
-          <div className={classes.root}>
+          <div className={`${classes.root} ${styles.sliderspace}`}>
               <Typography id="input-slider" gutterBottom >
                 <p className={styles.labels}>Size</p>
               </Typography>
