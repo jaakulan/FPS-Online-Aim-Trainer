@@ -144,6 +144,9 @@ export default function InputSlider() {
               </Grid>
               </Grid>
           </div>
+          <div className={styles.next}>
+              <a href="/transition" className={styles.link}>Next</a>
+          </div>
       </div>
   );
 }

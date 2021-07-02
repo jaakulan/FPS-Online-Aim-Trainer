@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 import styles from "./Transition.module.css";
 import backgroundImage from "../../Assets/Images/BackgroundImage.png";
 
@@ -7,7 +8,9 @@ export default class Transition extends Component {
         super(props);
         this.state = {
             countdown: 5,
+            redirect: false,
         };
+
     }
 
     componentDidMount() {
@@ -15,6 +18,8 @@ export default class Transition extends Component {
         const timer = setInterval(() =>{
             if (this.state.countdown > 0) {
                 this.setState({countdown: this.state.countdown - 1});
+            } else if (this.state.countdown === 0) {
+                this.setState({ redirect: true });
             }
         }, 1000);
     }
@@ -24,6 +29,9 @@ export default class Transition extends Component {
     }
 
     render() {
+        if (this.state.redirect) {
+            return <Redirect to="/training" />
+        }
         return (
             <div className={styles.main}>
                 <img src={backgroundImage} className={styles.image}/>

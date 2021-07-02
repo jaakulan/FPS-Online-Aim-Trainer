@@ -22,7 +22,7 @@ export default class Starter extends Component {
                     </div>
                 </div>
                 <div className={styles.start}>
-                    Click to Start NOW!
+                    <a href="/map" className={styles.link}>Click to Start NOW!</a>
                 </div>
             </div>
         )

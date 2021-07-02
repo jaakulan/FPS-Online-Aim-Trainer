@@ -29,3 +29,8 @@
     margin-top: 5%;
     font-size: 40px;
 }
+
+.link {
+    text-decoration: none;
+    color: white;
+}
