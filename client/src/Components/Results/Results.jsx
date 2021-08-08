@@ -10,7 +10,6 @@ export default class Results extends Component {
     render() {
         return (
             <div className={styles.main}>
-                <img src={backgroundImage} className={styles.image}/>
                 <div className={styles.title}>
                     Results
                 </div>

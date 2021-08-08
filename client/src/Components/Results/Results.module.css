@@ -4,6 +4,10 @@
     font-family: "fixedsys";
 }
 
+body{
+    background-color: rgba(226,30,38,255);
+}
+
 .image {
     position: absolute;
     z-index: -1;

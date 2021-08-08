@@ -13,7 +13,6 @@ export default class CrossHair extends Component {
     render() {
         return (
             <div className={styles.main}>
-                <img src={backgroundImage} className={styles.image}/>
                 <div className={styles.title}>
                     Choose your crosshair!
                     <hr />

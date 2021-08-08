@@ -11,6 +11,10 @@
   height: 100%;
 }
 
+body{
+    background-color: rgba(226,30,38,255);
+}
+
 .title {
     font-size: 50px;
     text-align: center;

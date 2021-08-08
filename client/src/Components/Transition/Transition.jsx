@@ -34,7 +34,6 @@ export default class Transition extends Component {
         }
         return (
             <div className={styles.main}>
-                <img src={backgroundImage} className={styles.image}/>
                 <div className={styles.title}>
                     Shoot the targets as they appear! As fast as you can, it will only take 1 bullet
                     (click). Targets will be smiley faces of different sizes! Good Luck!
