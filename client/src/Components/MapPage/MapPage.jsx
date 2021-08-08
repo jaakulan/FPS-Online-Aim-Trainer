@@ -11,25 +11,29 @@ export default class MapPage extends Component {
     render() {
         return (
             <div className={styles.main}>
-                <img src={backgroundImage} className={styles.image}/>
+                
                 <div className={styles.title}>
                     Choose a map to practice on!
                 </div>
+
                 <div className={styles.row}>
-                    CSGO
-                    <hr/>
+                <div className={styles.subtitle}>CSGO</div>
+                    <hr className= {styles.subtitle_line}/>
                     <img src={CSGOMap} className={styles.map}/>
                 </div>
+
                 <div className={styles.row} >
-                    CSGO
-                    <hr/>
+                <div className={styles.subtitle}>CSGO</div>
+                    <hr className= {styles.subtitle_line}/>
                     <img src={CSGOMap} className={styles.map}/>
                 </div>
+
                 <div className={styles.row}>
-                    CSGO
-                    <hr/>
+                <div className={styles.subtitle}>CSGO</div>
+                    <hr className= {styles.subtitle_line}/>
                     <img src={CSGOMap} className={styles.map}/>
                 </div>
+                
                 <div className={styles.next}>
                     <a href="/crosshair" className={styles.link}>Next</a>
                 </div>

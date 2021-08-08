@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styles from "./Starter.module.css";
-import starterImage from "../../Assets/Images/StarterImage2.png";
+import starterImage from "../../Assets/Background/starter_background.png";
 
 export default class Starter extends Component {
     constructor(props) {
@@ -17,7 +17,7 @@ export default class Starter extends Component {
                 <div>
                     <div className={styles.message}>
                         Welcome to the Aim Trainer,
-                        Here you will train to shoot different size
+                        here you will train to shoot different size
                         targets as fast as you can.
                     </div>
                 </div>

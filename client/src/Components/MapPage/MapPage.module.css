@@ -4,6 +4,10 @@
     font-family: "fixedsys";
 }
 
+body{
+    background-color: rgba(226,30,38,255);
+}
+
 .image {
     position: absolute;
     z-index: -1;
@@ -15,16 +19,19 @@
     font-size: 70px;
     text-align: center;
     padding: 40px;
-    padding-top: 100px;
+    padding-top: 40px;
+    padding-bottom: 4%;
 }
 
 .row {
-    margin-left: 5%;
+    margin-top: 2%;
+    margin-bottom: 5%;
 }
 
 .map {
     width: 20%;
     height: 15%;
+    margin-left: 5%;
 }
 
 .link {
@@ -34,4 +41,18 @@
 
 .next {
     text-align: center;
+}
+
+.subtitle{
+    font-size: 55px;
+    height: 10%;
+    margin-left: 4%;
+    margin-bottom: 1%;
+    margin-top: -3%;
+}
+
+.subtitle_line{
+    width: 97%;
+    margin: auto;
+    margin-bottom: 3%;
 }

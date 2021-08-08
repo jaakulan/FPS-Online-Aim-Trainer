@@ -13,7 +13,7 @@
     text-align: left;
     width: 40%;
     padding: 5%;
-    margin-top: 10%;
+    margin-top: 6%;
     font-size: 40px;
 }
 
@@ -26,8 +26,13 @@
 
 .start{
     text-align: center;
-    margin-top: 5%;
     font-size: 40px;
+    border: 10px;
+    border-style: dotted;
+    border-color: white;
+    width: 30%;
+    margin-left: 33%;
+    margin-top: 5%;
 }
 
 .link {
