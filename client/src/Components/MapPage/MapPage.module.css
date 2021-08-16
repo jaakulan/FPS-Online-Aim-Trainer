@@ -31,7 +31,6 @@ body{
 .map {
     width: 20%;
     height: 15%;
-    margin-left: 5%;
 }
 
 .link {
@@ -51,4 +50,11 @@ body{
     width: 97%;
     margin: auto;
     margin-bottom: 3%;
+}
+
+.mapImages{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 30px;
 }
