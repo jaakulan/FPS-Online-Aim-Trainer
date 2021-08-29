@@ -7,6 +7,7 @@ import Settings from "../Settings/Settings";
 import Transitions from "../Transition/Transition";
 import Results from "../Results/Results";
 import Training from "../Training/Training";
+import Targets from "../Targets/Targets";
 
 export default function Routes() {
     return (
@@ -28,6 +29,9 @@ export default function Routes() {
             </Route>
             <Route exact path="/crosshair">
                 <CrossHair />
+            </Route>
+            <Route exact path="/targets">
+                <Targets />
             </Route>
             <Route exact path="/settings">
                 <Settings />
