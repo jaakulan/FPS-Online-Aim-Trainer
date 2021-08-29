@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import styles from "./Training.module.css";
+import map from "../../Assets/Maps/Cold_War/gameshow.jpg";
+import target from "../../Assets/Targets/bossbaby.png";
+import crossHair from "../../Assets/Crosshairs/Extra.png";
 
 export default class Training extends Component {
     constructor(props) {
@@ -9,9 +12,7 @@ export default class Training extends Component {
     render() {
         return (
             <div className={styles.main}>
-                <div className={styles.title}>
-                    Training
-                </div>
+                <img src={map} className={styles.image}/>
             </div>
         )
     }
