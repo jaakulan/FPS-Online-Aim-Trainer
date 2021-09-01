@@ -132,7 +132,9 @@ export default class MapPage extends Component {
                         <input type="image" src={ascentA} className={styles.map} onClick={(e) => {this.setState({map: "ascentA"})}}/>
                     </div>
                 </div>
-                
+                <div className={styles.next}>
+                    <a href="/crosshair" className={styles.link}>Next</a>
+                </div>
             </div>
         )
     }
