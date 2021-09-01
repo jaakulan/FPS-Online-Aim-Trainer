@@ -9,6 +9,14 @@ export default class Training extends Component {
         super(props);
     }
 
+    // Data is stored in sessionstorage. Use the following methods to get the relevant data
+    // componentDidMount() {
+    //     console.log(sessionStorage.getItem('crosshair'));
+    //     console.log(sessionStorage.getItem('map'));
+    //     console.log(sessionStorage.getItem('speed'));
+    //     console.log(sessionStorage.getItem('size'));
+    // }
+
     render() {
         return (
             <div className={styles.main}>

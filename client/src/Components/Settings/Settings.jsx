@@ -73,6 +73,11 @@ export default function InputSlider() {
     }
   };
 
+  const setSettings = () => {
+    sessionStorage.setItem('speed', speed);
+    sessionStorage.setItem('size', size);
+  }
+
   return (
       <div className={styles.main}>
           <img src={backgroundImage} className={styles.image}/>
@@ -145,7 +150,7 @@ export default function InputSlider() {
               </Grid>
           </div>
           <div className={styles.next}>
-              <a href="/transition" className={styles.link}>Next</a>
+              <a href="/transition" className={styles.link} onClick={setSettings}>Next</a>
           </div>
       </div>
   );

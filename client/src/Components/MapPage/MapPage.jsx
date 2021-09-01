@@ -133,7 +133,7 @@ export default class MapPage extends Component {
                     </div>
                 </div>
                 <div className={styles.next}>
-                    <a href="/crosshair" className={styles.link}>Next</a>
+                    <a href="/crosshair" className={styles.link} onClick={(e) => {sessionStorage.setItem('map', this.state.map)}}>Next</a>
                 </div>
             </div>
         )
