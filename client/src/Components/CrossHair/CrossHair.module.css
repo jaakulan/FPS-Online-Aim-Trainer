@@ -69,3 +69,8 @@ body{
     margin-bottom: 3%;
     margin-left: -3%;
 }
+
+input:focus
+{
+    border: 3px solid white;
+}

@@ -15,6 +15,9 @@ import backgroundImage from "../../Assets/Images/Black_Box.png";
 export default class CrossHair extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            crosshair: "",
+        }
     }
 
     render() {
@@ -28,33 +31,33 @@ export default class CrossHair extends Component {
                     Made by us
                     <hr className= {styles.subtitle_line}/>
                     <div className={styles.crosshairContainer}>
-                        <img src={c} className={styles.crosshair} />
-                        <img src={c1} className={styles.crosshair} />
-                        <img src={c2} className={styles.crosshair} />
-                        <img src={c3} className={styles.crosshair} />
-                        <img src={cCircle} className={styles.crosshair} />
-                        <img src={cCsgo} className={styles.crosshair} />
-                        <img src={cdot} className={styles.crosshair} />
-                        <img src={cEncircled} className={styles.crosshair} />
-                        <img src={cExtra} className={styles.crosshair} />
-                        <img src={csniper} className={styles.crosshair} />
+                        <input type="image" src={c} className={styles.crosshair} onClick={(e) => {this.setState({ crosshair: "c" })}}/>
+                        <input type="image" src={c1} className={styles.crosshair} onClick={(e) => {this.setState({ crosshair: "c1" })}}/>
+                        <input type="image" src={c2} className={styles.crosshair} onClick={(e) => {this.setState({ crosshair: "c2" })}}/>
+                        <input type="image" src={c3} className={styles.crosshair} onClick={(e) => {this.setState({ crosshair: "c3" })}}/>
+                        <input type="image" src={cCircle} className={styles.crosshair} onClick={(e) => {this.setState({ crosshair: "cCircle" })}}/>
+                        <input type="image" src={cCsgo} className={styles.crosshair} onClick={(e) => {this.setState({ crosshair: "cCsgo" })}}/>
+                        <input type="image" src={cdot} className={styles.crosshair} onClick={(e) => {this.setState({ crosshair: "cdot" })}}/>
+                        <input type="image" src={cEncircled} className={styles.crosshair} onClick={(e) => {this.setState({ crosshair: "cEncircled" })}}/>
+                        <input type="image" src={cExtra} className={styles.crosshair} onClick={(e) => {this.setState({ crosshair: "cExtra" })}}/>
+                        <input type="image" src={csniper} className={styles.crosshair} onClick={(e) => {this.setState({ crosshair: "csniper" })}}/>
                     </div>
                 </div>
                 <div className={styles.rowContent}>
                     CSGO
                     <hr className= {styles.subtitle_line}/>
                     <div className={styles.crosshairContainer}>
-                        <img src={cCsgo} className={styles.crosshair} />
-                        <img src={cdot} className={styles.crosshair} />
-                        <img src={c} className={styles.crosshair} />
+                        <input type="image" src={cCsgo} className={styles.crosshair} onClick={(e) => {this.setState({ crosshair: "cCsgo" })}}/>
+                        <input type="image" src={cdot} className={styles.crosshair} onClick={(e) => {this.setState({ crosshair: "cdot" })}}/>
+                        <input type="image" src={c} className={styles.crosshair} onClick={(e) => {this.setState({ crosshair: "c" })}}/>
                     </div>
                 </div>
                 <div className={styles.rowContent}>
                     Valorant
                     <hr className= {styles.subtitle_line}/>
                     <div className={styles.crosshairContainer}>
-                        <img src={cdot} className={styles.crosshair} />
-                        <img src={c} className={styles.crosshair} />
+                        <input type="image" src={cdot} className={styles.crosshair} onClick={(e) => {this.setState({ crosshair: "cdot" })}}/>
+                        <input type="image" src={c} className={styles.crosshair} onClick={(e) => {this.setState({ crosshair: "c" })}}/>
                     </div>
                 </div>
                 <div className={styles.next}>
