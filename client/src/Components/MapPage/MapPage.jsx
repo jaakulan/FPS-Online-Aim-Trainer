@@ -49,6 +49,9 @@ import { Button } from "@material-ui/core";
 export default class MapPage extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            map: "",
+        }
     }
 
     render() {
@@ -63,15 +66,15 @@ export default class MapPage extends Component {
                 <div className={styles.subtitle}>Cold War</div>
                 <hr className= {styles.subtitle_line}/>
                     <div className={styles.mapImages}>
-                        <img src={gameshow} className={styles.map}/>
-                        <img src={miami1} className={styles.map}/>
-                        <img src={miami2} className={styles.map}/>
-                        <img src={nuketown841} className={styles.map}/>
-                        <img src={nuketown842} className={styles.map}/>
-                        <img src={nuketown843} className={styles.map}/>
-                        <img src={raid1} className={styles.map}/>
-                        <img src={raid2} className={styles.map}/>
-                        <img src={standoff1} className={styles.map}/>
+                        <input type="image" src={gameshow} className={styles.map} onClick={(e) => {this.setState({map: "gameshow"})}}/>
+                        <input type="image" src={miami1} className={styles.map} onClick={(e) => {this.setState({map: "miami1"})}}/>
+                        <input type="image" src={miami2} className={styles.map} onClick={(e) => {this.setState({map: "miami2"})}}/>
+                        <input type="image" src={nuketown841} className={styles.map} onClick={(e) => {this.setState({map: "nuketown841"})}}/>
+                        <input type="image" src={nuketown842} className={styles.map} onClick={(e) => {this.setState({map: "nuketown842"})}}/>
+                        <input type="image" src={nuketown843} className={styles.map} onClick={(e) => {this.setState({map: "nuketown843"})}}/>
+                        <input type="image" src={raid1} className={styles.map} onClick={(e) => {this.setState({map: "raid1"})}}/>
+                        <input type="image" src={raid2} className={styles.map} onClick={(e) => {this.setState({map: "raid2"})}}/>
+                        <input type="image" src={standoff1} className={styles.map} onClick={(e) => {this.setState({map: "standoff1"})}}/>
                     </div>
                 </div>
 
@@ -79,11 +82,11 @@ export default class MapPage extends Component {
                 <div className={styles.subtitle}>Warzone</div>
                     <hr className= {styles.subtitle_line}/>
                     <div className={styles.mapImages}>
-                        <img src={livestock} className={styles.map}/>
-                        <img src={stadium} className={styles.map}/>
-                        <img src={quarry} className={styles.map}/>
-                        <img src={superstore1} className={styles.map}/>
-                        <img src={superstore2} className={styles.map}/>
+                        <input type="image" src={livestock} className={styles.map} onClick={(e) => {this.setState({map: "livestock"})}}/>
+                        <input type="image" src={stadium} className={styles.map} onClick={(e) => {this.setState({map: "stadium"})}}/>
+                        <input type="image" src={quarry} className={styles.map} onClick={(e) => {this.setState({map: "quarry"})}}/>
+                        <input type="image" src={superstore1} className={styles.map} onClick={(e) => {this.setState({map: "superstore1"})}}/>
+                        <input type="image" src={superstore2} className={styles.map} onClick={(e) => {this.setState({map: "superstore2"})}}/>
                     </div>
                 </div>
 
@@ -91,13 +94,13 @@ export default class MapPage extends Component {
                 <div className={styles.subtitle}>Overwatch</div>
                     <hr className= {styles.subtitle_line}/>
                     <div className={styles.mapImages}>
-                        <img src={dorado1} className={styles.map}/>
-                        <img src={dorado2} className={styles.map}/>
-                        <img src={dorado3} className={styles.map}/>
-                        <img src={goth1} className={styles.map}/>
-                        <img src={thiago1} className={styles.map}/>
-                        <img src={thiago2} className={styles.map}/>
-                        <img src={thiago3} className={styles.map}/>
+                        <input type="image" src={dorado1} className={styles.map} onClick={(e) => {this.setState({map: "dorado1"})}}/>
+                        <input type="image" src={dorado2} className={styles.map} onClick={(e) => {this.setState({map: "dorado2"})}}/>
+                        <input type="image" src={dorado3} className={styles.map} onClick={(e) => {this.setState({map: "dorado3"})}}/>
+                        <input type="image" src={goth1} className={styles.map} onClick={(e) => {this.setState({map: "goth1"})}}/>
+                        <input type="image" src={thiago1} className={styles.map} onClick={(e) => {this.setState({map: "thiago1"})}}/>
+                        <input type="image" src={thiago2} className={styles.map} onClick={(e) => {this.setState({map: "thiago2"})}}/>
+                        <input type="image" src={thiago3} className={styles.map} onClick={(e) => {this.setState({map: "thiago3"})}}/>
                     </div>
                 </div>
 
@@ -105,17 +108,17 @@ export default class MapPage extends Component {
                 <div className={styles.subtitle}>CSGO</div>
                 <hr className= {styles.subtitle_line}/>
                     <div className={styles.mapImages}>
-                        <img src={CatDust} className={styles.map}/>
-                        <img src={CatMirage} className={styles.map}/>
-                        <img src={CrossingDust} className={styles.map}/>
-                        <img src={AMirage} className={styles.map}/>
-                        <img src={AMirage2} className={styles.map}/>
-                        <img src={ATrain} className={styles.map}/>
-                        <img src={BMirage} className={styles.map}/>
-                        <img src={BMirage1} className={styles.map}/>
-                        <img src={BDust} className={styles.map}/>
-                        <img src={BTrain} className={styles.map}/>
-                        <img src={MidTrain} className={styles.map}/>
+                        <input type="image" src={CatDust} className={styles.map} onClick={(e) => {this.setState({map: "CatDust"})}}/>
+                        <input type="image" src={CatMirage} className={styles.map} onClick={(e) => {this.setState({map: "CatMirage"})}}/>
+                        <input type="image" src={CrossingDust} className={styles.map} onClick={(e) => {this.setState({map: "CrossingDust"})}}/>
+                        <input type="image" src={AMirage} className={styles.map} onClick={(e) => {this.setState({map: "AMirage"})}}/>
+                        <input type="image" src={AMirage2} className={styles.map} onClick={(e) => {this.setState({map: "AMirage2"})}}/>
+                        <input type="image" src={ATrain} className={styles.map} onClick={(e) => {this.setState({map: "ATrain"})}}/>
+                        <input type="image" src={BMirage} className={styles.map} onClick={(e) => {this.setState({map: "BMirage"})}}/>
+                        <input type="image" src={BMirage1} className={styles.map} onClick={(e) => {this.setState({map: "BMirage1"})}}/>
+                        <input type="image" src={BDust} className={styles.map} onClick={(e) => {this.setState({map: "BDust"})}}/>
+                        <input type="image" src={BTrain} className={styles.map} onClick={(e) => {this.setState({map: "BTrain"})}}/>
+                        <input type="image" src={MidTrain} className={styles.map} onClick={(e) => {this.setState({map: "MidTrain"})}}/>
                     </div>
                 </div>
 
@@ -123,10 +126,10 @@ export default class MapPage extends Component {
                 <div className={styles.subtitle}>Valorant</div>
                     <hr className= {styles.subtitle_line}/>
                     <div className={styles.mapImages}>
-                        <img src={breezeA} className={styles.map}/>
-                        <img src={havenMid} className={styles.map}/>
-                        <img src={splitMid} className={styles.map}/>
-                        <img src={ascentA} className={styles.map}/>
+                        <input type="image" src={breezeA} className={styles.map} onClick={(e) => {this.setState({map: "breezeA"})}}/>
+                        <input type="image" src={havenMid} className={styles.map} onClick={(e) => {this.setState({map: "havenMid"})}}/>
+                        <input type="image" src={splitMid} className={styles.map} onClick={(e) => {this.setState({map: "splitMid"})}}/>
+                        <input type="image" src={ascentA} className={styles.map} onClick={(e) => {this.setState({map: "ascentA"})}}/>
                     </div>
                 </div>
                 
