@@ -3,6 +3,11 @@ import { Redirect } from "react-router-dom";
 import styles from "./Transition.module.css";
 import backgroundImage from "../../Assets/Images/BackgroundImage.png";
 
+/**
+ * Transition is a component that is set as an intermediate page
+ * between a user selecting their preferences and the actual aim
+ * training.
+ */
 export default class Transition extends Component {
     constructor(props) {
         super(props);
@@ -13,8 +18,10 @@ export default class Transition extends Component {
 
     }
 
+    /**
+     * ComponentDidMount in this component is used for the countdown
+     */
     componentDidMount() {
-        console.log("hello");
         const timer = setInterval(() =>{
             if (this.state.countdown > 0) {
                 this.setState({countdown: this.state.countdown - 1});

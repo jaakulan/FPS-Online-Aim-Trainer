@@ -36,7 +36,12 @@ const useStyles = makeStyles({
     },
   });
   
-export default function InputSlider() {
+/**
+ * Settings is a component that allows users to select the
+ * speed and size of their targets in the aim trainer. It
+ * saves the selections in sessionStorage.
+ */
+export default function Settings() {
   const classes = useStyles();
   const [speed, setSpeed] = useState(0);
   const [size, setSize] = useState(0);

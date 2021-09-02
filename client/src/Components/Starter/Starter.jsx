@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import styles from "./Starter.module.css";
 import starterImage from "../../Assets/Background/starter_background.png";
 
+/**
+ * Starter is the initial (default) page that a user begins at
+ * when the aim trainer loads up.
+ */
 export default class Starter extends Component {
     constructor(props) {
         super(props);

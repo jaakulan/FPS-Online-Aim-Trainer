@@ -12,6 +12,11 @@ import cExtra from "../../Assets/Crosshairs/Extra.png";
 import csniper from "../../Assets/Crosshairs/sniper.png";
 import backgroundImage from "../../Assets/Images/Black_Box.png";
 
+/**
+ * The CrossHair component is a page that allows users to
+ * select the crosshair that they would like to use in the aim
+ * trainer. It saves the selection using sessionStorage.
+ */
 export default class CrossHair extends Component {
     constructor(props) {
         super(props);

@@ -9,6 +9,9 @@ import Results from "../Results/Results";
 import Training from "../Training/Training";
 import Targets from "../Targets/Targets";
 
+/**
+ * Routes returns the different components depending on the url path
+ */
 export default function Routes() {
     return (
         <Switch>

@@ -4,6 +4,10 @@ import map from "../../Assets/Maps/Cold_War/gameshow.jpg";
 import target from "../../Assets/Targets/bossbaby.png";
 import crossHair from "../../Assets/Crosshairs/Extra.png";
 
+/**
+ * Training is the component once all the selections are made
+ * and the actual aim trainer functionality takes place
+ */
 export default class Training extends Component {
     constructor(props) {
         super(props);
