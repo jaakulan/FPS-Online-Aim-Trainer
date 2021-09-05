@@ -1,7 +1,9 @@
-.main {
+.cdot {
     width: 100%;
     height: 100%;
-    
+    margin: 0;
+    height: 100vh;
+    cursor: url("../../Assets/Crosshairs/dot.png"),auto;
 }
 
 .image {
@@ -9,4 +11,12 @@
     z-index: -1;
     width: 100%;
     height: 100%;
+    -khtml-user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.cursor {
 }

@@ -31,10 +31,6 @@ export default class Transition extends Component {
         }, 1000);
     }
 
-    decrementCountdown = () => {
-        this.setState({ countdown: this.state.countdown - 1});
-    }
-
     render() {
         if (this.state.redirect) {
             return <Redirect to="/training" />
