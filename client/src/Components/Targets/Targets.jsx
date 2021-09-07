@@ -15,7 +15,7 @@ import terrorist from "../../Assets/Targets/terrorist.png";
 import woods from "../../Assets/Targets/woods.png";
 
 
-export default class CrossHair extends Component {
+export default class Targets extends Component {
     constructor(props) {
         super(props);
     }
