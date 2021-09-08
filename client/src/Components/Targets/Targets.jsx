@@ -18,6 +18,9 @@ import woods from "../../Assets/Targets/woods.png";
 export default class Targets extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            target: "",
+        }
     }
 
     render() {
@@ -30,56 +33,55 @@ export default class Targets extends Component {
                     All the targets!
                     <hr className= {styles.subtitle_line}/>
                     <div className={styles.crosshairContainer}>
-                        <img src={target} className={styles.targets} />
-                        <img src={babylion} className={styles.targets} />
-                        <img src={beard} className={styles.targets} />
-                        <img src={bossbaby} className={styles.targets} />
-                        <img src={counterTerrorist} className={styles.targets} />
-                        <img src={terrorist} className={styles.targets} />
-                        <img src={woods} className={styles.targets} />
-                        <img src={ghost} className={styles.targets} />
-                        <img src={jett} className={styles.targets} />
-                        <img src={menendez} className={styles.targets} />
-                        <img src={octane} className={styles.targets} />
-                        <img src={bloodhound} className={styles.targets} />
-                        <img src={omen} className={styles.targets} />
-
+                        <input type="image" src={target} className={styles.targets} onClick={(e) => {this.setState({target: "target"})}}/>
+                        <input type="image" src={babylion} className={styles.targets} onClick={(e) => {this.setState({target: "babylion"})}}/>
+                        <input type="image" src={beard} className={styles.targets} onClick={(e) => {this.setState({target: "beard"})}}/>
+                        <input type="image" src={bossbaby} className={styles.targets} onClick={(e) => {this.setState({target: "bossbaby"})}}/>
+                        <input type="image" src={counterTerrorist} className={styles.targets} onClick={(e) => {this.setState({target: "counterTerrorist"})}}/>
+                        <input type="image" src={terrorist} className={styles.targets} onClick={(e) => {this.setState({target: "terrorist"})}}/>
+                        <input type="image" src={woods} className={styles.targets} onClick={(e) => {this.setState({target: "woods"})}}/>
+                        <input type="image" src={ghost} className={styles.targets} onClick={(e) => {this.setState({target: "ghost"})}}/>
+                        <input type="image" src={jett} className={styles.targets} onClick={(e) => {this.setState({target: "jett"})}}/>
+                        <input type="image" src={menendez} className={styles.targets} onClick={(e) => {this.setState({target: "menendez"})}}/>
+                        <input type="image" src={octane} className={styles.targets} onClick={(e) => {this.setState({target: "octane"})}}/>
+                        <input type="image" src={bloodhound} className={styles.targets} onClick={(e) => {this.setState({target: "bloodhound"})}}/>
+                        <input type="image" src={omen} className={styles.targets} onClick={(e) => {this.setState({target: "omen"})}}/>
                     </div>
                 </div>
                 <div className={styles.rowContent}>
                     CSGO
                     <hr className= {styles.subtitle_line}/>
                     <div className={styles.crosshairContainer}>
-                        <img src={terrorist} className={styles.targets} />
-                        <img src={counterTerrorist} className={styles.targets} />
+                        <input type="image" src={terrorist} className={styles.targets} onClick={(e) => {this.setState({target: "terrorist"})}}/>
+                        <input type="image" src={counterTerrorist} className={styles.targets} onClick={(e) => {this.setState({target: "counterTerrorist"})}}/>
                     </div>
                 </div>
                 <div className={styles.rowContent}>
                     Valorant
                     <hr className= {styles.subtitle_line}/>
                     <div className={styles.crosshairContainer}>
-                        <img src={omen} className={styles.targets} />
-                        <img src={jett} className={styles.targets} />
+                        <input type="image" src={omen} className={styles.targets} onClick={(e) => {this.setState({target: "omen"})}}/>
+                        <input type="image" src={jett} className={styles.targets} onClick={(e) => {this.setState({target: "jett"})}}/>
                     </div>
                 </div>
                 <div className={styles.rowContent}>
                     Warzone
                     <hr className= {styles.subtitle_line}/>
                     <div className={styles.crosshairContainer}>
-                        <img src={woods} className={styles.targets} />
-                        <img src={ghost} className={styles.targets} />
+                        <input type="image" src={woods} className={styles.targets} onClick={(e) => {this.setState({target: "woods"})}}/>
+                        <input type="image" src={ghost} className={styles.targets} onClick={(e) => {this.setState({target: "ghost"})}}/>
                     </div>
                 </div>
                 <div className={styles.rowContent}>
                     Apex Legends
                     <hr className= {styles.subtitle_line}/>
                     <div className={styles.crosshairContainer}>
-                        <img src={octane} className={styles.targets} />
-                        <img src={bloodhound} className={styles.targets} />
+                        <input type="image" src={octane} className={styles.targets} onClick={(e) => {this.setState({target: "octane"})}}/>
+                        <input type="bloodhound" src={woods} className={styles.targets} onClick={(e) => {this.setState({target: "bloodhound"})}}/>
                     </div>
                 </div>
                 <div className={styles.next}>
-                    <a href="/settings" className={styles.link}>Next</a>
+                    <a href="/settings" className={styles.link} onClick={(e) => {sessionStorage.setItem('target', this.state.target)}}>Next</a>
                 </div>
             </div>
         )
