@@ -1,8 +1,16 @@
 import React, { Component } from "react";
 import styles from "./Training.module.css";
-import map from "../../Assets/Maps/Cold_War/gameshow.jpg";
-import target from "../../Assets/Targets/bossbaby.png";
-import crossHair from "../../Assets/Crosshairs/dot.png";
+
+let cdot = "https://i.imgur.com/84px1ZP.png";
+let c = "https://i.imgur.com/EeAAqqo.png";
+let cExtra = "https://i.imgur.com/X4Kcc60.png?1";
+let csniper = "https://i.imgur.com/9rWZ5lh.png?1";
+let cEncircled = "https://i.imgur.com/KaQESbA.png?1";
+let c1 = "https://i.imgur.com/7pAFfSm.png?1";
+let c2 = "https://i.imgur.com/Hi3TdkX.png?1";
+let c3 = "https://i.imgur.com/DyoRlOu.png?1";
+let cCircle = "https://i.imgur.com/z5RrD5V.png?1";
+let cCSGO = "https://i.imgur.com/2nLdsqo.png?1";
 
 /**
  * Training is the component once all the selections are made
@@ -13,7 +21,9 @@ export default class Training extends Component {
         super(props);
         this.state = {
             totalClicks: 0,
-            crosshair: sessionStorage.getItem('crosshair')
+            crosshair: sessionStorage.getItem('crosshair'),
+            map: sessionStorage.getItem('map'),
+            target: sessionStorage.getItem('target')
         }
         this.myRef = React.createRef();
     }
@@ -22,6 +32,7 @@ export default class Training extends Component {
         this.setState({ totalClicks: this.state.totalClicks+1});
         console.log(this.state.totalClicks)
     }
+
     // Data is stored in sessionstorage. Use the following methods to get the relevant data
     // componentDidMount() {
     //     console.log(sessionStorage.getItem('crosshair'));
@@ -30,21 +41,16 @@ export default class Training extends Component {
     //     console.log(sessionStorage.getItem('size'));
     // }
 
-    componentWillMount(){
-        const crosshairs = [""]
-        for(var i =0; i< crosshairs.length; i++){
-
-        }
-    }
-
     render() {
-        console.log(this.state.crosshai)
-        document.getElementsByClassName('main').style = "cdot";
-        return (
-            <div className={styles.main} id={styles.crosshai} onClick={this.countClicks}>
-                <img src={map} className={styles.image}/>
-            </div>
-           
+        console.log(this.state.map)
+        console.log(this.state.crosshair)
+        let crossHairStyle = {
+            cursor: "url(" + this.state.crosshair + ") 32 32,default"
+        }
+        return (  
+            <div className={styles.main} style={crossHairStyle} onClick={this.countClicks}>
+                <img src={this.state.map} className={styles.image}/>
+            </div>   
         )
     }
 }
