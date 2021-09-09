@@ -4,7 +4,7 @@ import Starter from "../Starter/Starter";
 import MapPage  from "../MapPage/MapPage";
 import CrossHair from "../CrossHair/CrossHair";
 import Settings from "../Settings/Settings";
-import Transitions from "../Transition/Transition";
+import Transition from "../Transition/Transition";
 import Results from "../Results/Results";
 import Training from "../Training/Training";
 import Targets from "../Targets/Targets";
@@ -15,8 +15,7 @@ import Targets from "../Targets/Targets";
 export default function Routes() {
     return (
         <Switch>
-            <Route exact path="/">
-                <Starter />
+            <Route exact path="/" component={Starter}>
                 <Redirect
                     to={{
                         pathname: "/starter",
@@ -24,30 +23,14 @@ export default function Routes() {
                 />
             </Route>
 
-            <Route exact path="/starter">
-                <Starter />
-            </Route>
-            <Route exact path="/map">
-                <MapPage />
-            </Route>
-            <Route exact path="/crosshair">
-                <CrossHair />
-            </Route>
-            <Route exact path="/targets">
-                <Targets />
-            </Route>
-            <Route exact path="/settings">
-                <Settings />
-            </Route>
-            <Route exact path="/transition">
-                <Transitions key={1}/>
-            </Route>
-            <Route exact path="/results">
-                <Results />
-            </Route>
-            <Route exact path="/training">
-                <Training />
-            </Route>
+            <Route exact path="/starter" component={Starter} />
+            <Route exact path="/map" component={MapPage} />
+            <Route exact path="/crosshair" component={CrossHair} />
+            <Route exact path="/targets" component={Targets} />
+            <Route exact path="/settings" component={Settings} />
+            <Route exact path="/transition" component={Transition} />
+            <Route exact path="/results" component={Results} />
+            <Route exact path="/training" component={Training} />
         </Switch>
     )
 }
