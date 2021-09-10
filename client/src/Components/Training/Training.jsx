@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styles from "./Training.module.css";
+import target from "../../Assets/Targets/babylion.png";
 
 let cdot = "https://i.imgur.com/84px1ZP.png";
 let c = "https://i.imgur.com/EeAAqqo.png";
@@ -21,9 +22,14 @@ export default class Training extends Component {
         super(props);
         this.state = {
             totalClicks: 0,
+            totalWins: 0,
             crosshair: sessionStorage.getItem('crosshair'),
             map: sessionStorage.getItem('map'),
-            target: sessionStorage.getItem('target')
+            target: sessionStorage.getItem('target'),
+            top: 0,
+            left: 0,
+            hide: false,
+            seconds: 3000
         }
         this.myRef = React.createRef();
     }
@@ -31,6 +37,11 @@ export default class Training extends Component {
     countClicks = () => {
         this.setState({ totalClicks: this.state.totalClicks+1});
         console.log(this.state.totalClicks)
+    }
+
+    countWins = () => {
+        this.setState({ totalWins: this.state.totalWins+1});
+        console.log(this.state.totalWins)
     }
 
     // Data is stored in sessionstorage. Use the following methods to get the relevant data
@@ -41,15 +52,27 @@ export default class Training extends Component {
     //     console.log(sessionStorage.getItem('size'));
     // }
 
+    componentDidMount(){
+        for(var i = 0; i<25 ;i++){
+
+        }
+    }
     render() {
         console.log(this.state.map)
         console.log(this.state.crosshair)
         let crossHairStyle = {
             cursor: "url(" + this.state.crosshair + ") 32 32,default"
         }
+        let targetRender = {
+            marginTop: this.state.top,
+            marginLeft: this.state.left,
+            height: "100px",
+            width: "100px"
+        }
         return (  
             <div className={styles.main} style={crossHairStyle} onClick={this.countClicks} onContextMenu={(e)=> e.preventDefault()}>
                 <img src={this.state.map} className={styles.image}/>
+                <img src={target} style={targetRender} hidden={this.state.hide} onClick={this.countWins}/>
             </div>   
         )
     }
