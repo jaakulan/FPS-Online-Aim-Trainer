@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import styles from "./Training.module.css";
 import target from "../../Assets/Targets/babylion.png";
+import { Redirect } from "react-router-dom";
+
 
 let cdot = "https://i.imgur.com/84px1ZP.png";
 let c = "https://i.imgur.com/EeAAqqo.png";
@@ -26,10 +28,12 @@ export default class Training extends Component {
             crosshair: sessionStorage.getItem('crosshair'),
             map: sessionStorage.getItem('map'),
             target: sessionStorage.getItem('target'),
-            top: 0,
-            left: 0,
+            top: String(Math.floor((Math.random() * 100) + 1)) + "%",
+            left: String(Math.floor((Math.random() * 100) + 1)) + "%",
             hide: false,
-            seconds: 3000
+            seconds: 3000,
+            counter: 0,
+            redirect: false,
         }
         this.myRef = React.createRef();
     }
@@ -53,13 +57,36 @@ export default class Training extends Component {
     // }
 
     componentDidMount(){
-        for(var i = 0; i<25 ;i++){
-
-        }
+        setInterval(() => {
+            if (this.state.counter === 25) {
+                this.setState({ redirect: true });
+            } else {
+                this.setImage();
+                this.setState({ counter: this.state.counter + 1 })
+            }
+        }, this.state.seconds)
     }
+
+    setImage = async () => {
+        await this.setShow();
+        await this.setMargins();
+        await this.setShow();
+    }
+
+    setShow = async () => {
+        this.setState({ hide: !this.state.hide });
+    }
+
+    setMargins = async () => {
+        this.setState( {
+            top: String(Math.floor((Math.random() * 100) + 1)) + "%",
+            left: String(Math.floor((Math.random() * 100) + 1)) + "%"
+        })
+    }
+
     render() {
-        console.log(this.state.map)
-        console.log(this.state.crosshair)
+        // console.log(this.state.map)
+        // console.log(this.state.crosshair)
         let crossHairStyle = {
             cursor: "url(" + this.state.crosshair + ") 32 32,default"
         }
@@ -69,8 +96,11 @@ export default class Training extends Component {
             height: "100px",
             width: "100px"
         }
+        if (this.state.redirect) {
+            return <Redirect to="/starter" />
+        }
         return (  
-            <div className={styles.main} style={crossHairStyle} onClick={this.countClicks} onContextMenu={(e)=> e.preventDefault()}>
+            <div className={styles.main} style={crossHairStyle} onClick={this.countClicks} /* onContextMenu={(e)=> e.preventDefault()} */>
                 <img src={this.state.map} className={styles.image}/>
                 <img src={target} style={targetRender} hidden={this.state.hide} onClick={this.countWins}/>
             </div>   
