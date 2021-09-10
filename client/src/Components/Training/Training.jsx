@@ -28,10 +28,10 @@ export default class Training extends Component {
             crosshair: sessionStorage.getItem('crosshair'),
             map: sessionStorage.getItem('map'),
             target: sessionStorage.getItem('target'),
-            top: String(Math.floor((Math.random() * 100) + 1)) + "%",
-            left: String(Math.floor((Math.random() * 100) + 1)) + "%",
+            top: String(Math.floor((Math.random() * 85) + 1)) + "vh",
+            left: String(Math.floor((Math.random() * 90) + 1)) + "vw",
             hide: false,
-            seconds: 3000,
+            seconds: 500,
             counter: 0,
             redirect: false,
         }
@@ -79,8 +79,8 @@ export default class Training extends Component {
 
     setMargins = async () => {
         this.setState( {
-            top: String(Math.floor((Math.random() * 100) + 1)) + "%",
-            left: String(Math.floor((Math.random() * 100) + 1)) + "%"
+            top: String(Math.floor((Math.random() * 85) + 1)) + "vh",
+            left: String(Math.floor((Math.random() * 90) + 1)) + "vw"
         })
     }
 
@@ -88,11 +88,19 @@ export default class Training extends Component {
         // console.log(this.state.map)
         // console.log(this.state.crosshair)
         let crossHairStyle = {
-            cursor: "url(" + this.state.crosshair + ") 32 32,default"
+            cursor: "url(" + this.state.crosshair + ") 32 32,default",
+            backgroundImage: "url(" +this.state.map+")"
         }
         let targetRender = {
             marginTop: this.state.top,
             marginLeft: this.state.left,
+            height: "100px",
+            width: "100px",
+        }
+
+        let targetExample = {
+            marginTop: "50%",
+            marginLeft: "50%",
             height: "100px",
             width: "100px"
         }
@@ -100,8 +108,7 @@ export default class Training extends Component {
             return <Redirect to="/starter" />
         }
         return (  
-            <div className={styles.main} style={crossHairStyle} onClick={this.countClicks} /* onContextMenu={(e)=> e.preventDefault()} */>
-                <img src={this.state.map} className={styles.image}/>
+            <div className={styles.main} style={crossHairStyle} onClick={this.countClicks} /* onContextMenu={(e)=> e.preventDefault()}    <img src={this.state.map} className={styles.image}/>  */  >
                 <img src={target} style={targetRender} hidden={this.state.hide} onClick={this.countWins}/>
             </div>   
         )
