@@ -48,7 +48,7 @@ export default class Training extends Component {
             cursor: "url(" + this.state.crosshair + ") 32 32,default"
         }
         return (  
-            <div className={styles.main} style={crossHairStyle} onClick={this.countClicks}>
+            <div className={styles.main} style={crossHairStyle} onClick={this.countClicks} onContextMenu={(e)=> e.preventDefault()}>
                 <img src={this.state.map} className={styles.image}/>
             </div>   
         )
