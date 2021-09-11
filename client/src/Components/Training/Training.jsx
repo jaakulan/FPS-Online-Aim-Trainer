@@ -104,7 +104,7 @@ export default class Training extends Component {
         }
         return (  
             <div className={styles.main} style={crossHairStyle} onClick={this.countClicks} /* onContextMenu={(e)=> e.preventDefault()}  */  >
-                <img src={this.state.target} style={targetRender} hidden={this.state.hide} onClick={this.countWins}/>
+                <img className={styles.target} src={this.state.target} style={targetRender} hidden={this.state.hide} onClick={this.countWins}/>
             </div>   
         )
     }
