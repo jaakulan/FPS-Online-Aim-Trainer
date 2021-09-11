@@ -21,7 +21,7 @@ export default class Training extends Component {
             top: String(Math.floor((Math.random() * 85) + 1)) + "vh",
             left: String(Math.floor((Math.random() * 90) + 1)) + "vw",
             hide: false,
-            seconds: 2000,
+            seconds: 3000,
             counter: 0,
             redirect: false,
 
@@ -37,6 +37,8 @@ export default class Training extends Component {
 
     countWins = () => {
         new Audio(hit).play();
+        this.setImage();
+        this.setState({ counter: this.state.counter + 1 });
         this.setState({ totalWins: this.state.totalWins+1});
         console.log(this.state.totalWins)
     }
@@ -51,11 +53,11 @@ export default class Training extends Component {
 
     componentDidMount(){
         setInterval(() => {
-            if (this.state.counter === 25) {
-                this.setState({ redirect: false });
+            if (this.state.counter === 5) {
+                this.setState({ redirect: true });
             } else {
                 this.setImage();
-                this.setState({ counter: this.state.counter + 1 })
+                this.setState({ counter: this.state.counter + 1 });
             }
         }, this.state.seconds)
     }
@@ -102,7 +104,7 @@ export default class Training extends Component {
         }
         return (  
             <div className={styles.main} style={crossHairStyle} onClick={this.countClicks} /* onContextMenu={(e)=> e.preventDefault()}  */  >
-                <img src={target} style={targetRender} hidden={this.state.hide} onClick={this.countWins}/>
+                <img src={this.state.target} style={targetRender} hidden={this.state.hide} onClick={this.countWins}/>
             </div>   
         )
     }

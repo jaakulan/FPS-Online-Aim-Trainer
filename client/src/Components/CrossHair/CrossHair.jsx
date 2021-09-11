@@ -66,7 +66,7 @@ export default class CrossHair extends Component {
                     </div>
                 </div>
                 <div className={styles.next}>
-                    <a href="/settings" className={styles.link} onClick={(e) => {sessionStorage.setItem('crosshair', this.state.crosshair)}}>Next</a>
+                    <a href="/targets" className={styles.link} onClick={(e) => {sessionStorage.setItem('crosshair', this.state.crosshair)}}>Next</a>
                 </div>
             </div>
         )
