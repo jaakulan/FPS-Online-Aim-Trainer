@@ -2,18 +2,8 @@ import React, { Component } from "react";
 import styles from "./Training.module.css";
 import target from "../../Assets/Targets/babylion.png";
 import { Redirect } from "react-router-dom";
-
-
-let cdot = "https://i.imgur.com/84px1ZP.png";
-let c = "https://i.imgur.com/EeAAqqo.png";
-let cExtra = "https://i.imgur.com/X4Kcc60.png?1";
-let csniper = "https://i.imgur.com/9rWZ5lh.png?1";
-let cEncircled = "https://i.imgur.com/KaQESbA.png?1";
-let c1 = "https://i.imgur.com/7pAFfSm.png?1";
-let c2 = "https://i.imgur.com/Hi3TdkX.png?1";
-let c3 = "https://i.imgur.com/DyoRlOu.png?1";
-let cCircle = "https://i.imgur.com/z5RrD5V.png?1";
-let cCSGO = "https://i.imgur.com/2nLdsqo.png?1";
+import hit from "../../Assets/Sounds/hit.mp3";
+import miss from "../../Assets/Sounds/miss.mp3";
 
 /**
  * Training is the component once all the selections are made
@@ -31,19 +21,22 @@ export default class Training extends Component {
             top: String(Math.floor((Math.random() * 85) + 1)) + "vh",
             left: String(Math.floor((Math.random() * 90) + 1)) + "vw",
             hide: false,
-            seconds: 500,
+            seconds: 2000,
             counter: 0,
             redirect: false,
+
         }
         this.myRef = React.createRef();
     }
 
     countClicks = () => {
+        new Audio(miss).play();
         this.setState({ totalClicks: this.state.totalClicks+1});
         console.log(this.state.totalClicks)
     }
 
     countWins = () => {
+        new Audio(hit).play();
         this.setState({ totalWins: this.state.totalWins+1});
         console.log(this.state.totalWins)
     }
@@ -59,7 +52,7 @@ export default class Training extends Component {
     componentDidMount(){
         setInterval(() => {
             if (this.state.counter === 25) {
-                this.setState({ redirect: true });
+                this.setState({ redirect: false });
             } else {
                 this.setImage();
                 this.setState({ counter: this.state.counter + 1 })
@@ -108,7 +101,7 @@ export default class Training extends Component {
             return <Redirect to="/starter" />
         }
         return (  
-            <div className={styles.main} style={crossHairStyle} onClick={this.countClicks} /* onContextMenu={(e)=> e.preventDefault()}    <img src={this.state.map} className={styles.image}/>  */  >
+            <div className={styles.main} style={crossHairStyle} onClick={this.countClicks} /* onContextMenu={(e)=> e.preventDefault()}  */  >
                 <img src={target} style={targetRender} hidden={this.state.hide} onClick={this.countWins}/>
             </div>   
         )
