@@ -31,52 +31,94 @@ export default class Training extends Component {
             top: String(Math.floor((Math.random() * 85) + 1)) + "vh",
             left: String(Math.floor((Math.random() * 90) + 1)) + "vw",
             hide: false,
-            seconds: 500,
+            seconds: 3000,
             counter: 0,
             redirect: false,
+            interval: "",
+            timer: 0,
         }
         this.myRef = React.createRef();
     }
 
+    componentDidMount(){
+        this.intervalSetter();
+        // uncomment below method to add timer for the page
+        this.countdownTimer();
+    }
+
+    /**
+     * Adds timer to the page to redirect after a certain number of seconds,
+     * defined by the timer variable
+     */
+    countdownTimer = () => {
+        setInterval(() => {
+            this.setState({ timer: this.state.timer + 1})
+            if (this.state.timer === 10) {
+                console.log(this.state.totalClicks);
+                console.log(this.state.totalWins);
+                //uncomment below if you want to redirect
+                //this.setState({ redirect: true });
+            }
+        }, 1000)
+    }
+
+    /**
+     * Sets the intervals in which the image should reappear if they are not clicked
+     */
+    intervalSetter = async () => {
+        let intervalSetter = setInterval(() => {
+            this.setImage();
+        }, this.state.seconds);
+        this.setState({ interval: intervalSetter })
+    }
+
+    /**
+     * Sets the setter that sets the image once it has been clicked so that it
+     * reappears immediately once clicked
+     */
+    timeoutSetter = async () => {
+        setTimeout(() => {
+            this.setImage();
+        }, 0);
+    }
+
+    /**
+     * Counts number of total clicks by a user
+     */
     countClicks = () => {
         this.setState({ totalClicks: this.state.totalClicks+1});
-        console.log(this.state.totalClicks)
     }
 
-    countWins = () => {
+    /**
+     * Counts number of targets clicked accurately by a user. Then stops the interval,
+     * redeploys the image and starts the interval again.
+     */
+    countWins = async () => {
         this.setState({ totalWins: this.state.totalWins+1});
-        console.log(this.state.totalWins)
+        clearInterval(this.state.interval);
+        await this.timeoutSetter();
+        await this.intervalSetter();
     }
 
-    // Data is stored in sessionstorage. Use the following methods to get the relevant data
-    // componentDidMount() {
-    //     console.log(sessionStorage.getItem('crosshair'));
-    //     console.log(sessionStorage.getItem('map'));
-    //     console.log(sessionStorage.getItem('speed'));
-    //     console.log(sessionStorage.getItem('size'));
-    // }
-
-    componentDidMount(){
-        setInterval(() => {
-            if (this.state.counter === 25) {
-                this.setState({ redirect: true });
-            } else {
-                this.setImage();
-                this.setState({ counter: this.state.counter + 1 })
-            }
-        }, this.state.seconds)
-    }
-
+    /**
+     * hides image, reapplies random margins, and shows image again
+     */
     setImage = async () => {
         await this.setShow();
         await this.setMargins();
         await this.setShow();
     }
 
+    /**
+     * hides/shows image
+     */
     setShow = async () => {
         this.setState({ hide: !this.state.hide });
     }
 
+    /**
+     * Applies random margins to image
+     */
     setMargins = async () => {
         this.setState( {
             top: String(Math.floor((Math.random() * 85) + 1)) + "vh",
@@ -85,8 +127,7 @@ export default class Training extends Component {
     }
 
     render() {
-        // console.log(this.state.map)
-        // console.log(this.state.crosshair)
+
         let crossHairStyle = {
             cursor: "url(" + this.state.crosshair + ") 32 32,default",
             backgroundImage: "url(" +this.state.map+")"
@@ -96,13 +137,6 @@ export default class Training extends Component {
             marginLeft: this.state.left,
             height: "100px",
             width: "100px",
-        }
-
-        let targetExample = {
-            marginTop: "50%",
-            marginLeft: "50%",
-            height: "100px",
-            width: "100px"
         }
         if (this.state.redirect) {
             return <Redirect to="/starter" />
