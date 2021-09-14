@@ -27,6 +27,11 @@ export default class Results extends Component {
         }
         axios.post(api + 'analyze', data)
             .then((res) => {
+                let percentage = (res.data.hitPercentage * 100).toFixed(0)
+                this.setState({ 
+                    performance: percentage,
+                    comp: res.data.status
+                })
                 console.log(res);
             }).catch((err) => {
                 console.log(err);
@@ -34,9 +39,9 @@ export default class Results extends Component {
     }
 
     render() {
-        if (this.state.comp === "bad") {
+        if (this.state.comp === "Bad") {
             var image = sad;
-          } else if(this.state.comp === "okay"){
+          } else if(this.state.comp === "Decent"){
             var image = okay;
           } else {
             var image = smile;
