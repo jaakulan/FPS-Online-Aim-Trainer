@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styles from "./Results.module.css";
 import backgroundImage from "../../Assets/Images/BackgroundImage.png";
+import axios from "axios";
 
 /**
  * Results is a component that shows the results of interacting with
@@ -10,6 +11,20 @@ import backgroundImage from "../../Assets/Images/BackgroundImage.png";
 export default class Results extends Component {
     constructor(props) {
         super(props);
+    }
+
+    componentDidMount() {
+        let api = process.env.REACT_APP_API;
+        let data = {
+            hit: parseInt(sessionStorage.getItem('hits')),
+            missed: parseInt(sessionStorage.getItem('misses'))
+        }
+        axios.post(api + 'analyze', data)
+            .then((res) => {
+                console.log(res);
+            }).catch((err) => {
+                console.log(err);
+            })
     }
 
     render() {
