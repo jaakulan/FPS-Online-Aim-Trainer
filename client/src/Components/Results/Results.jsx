@@ -3,7 +3,7 @@ import styles from "./Results.module.css";
 import sad from "../../Assets/ResultFaces/sad.png";
 import okay from "../../Assets/ResultFaces/meh.png";
 import smile from "../../Assets/ResultFaces/smile.png";
-
+import axios from "axios";
 
 /**
  * Results is a component that shows the results of interacting with
@@ -17,6 +17,20 @@ export default class Results extends Component {
             performance:"86",
             comp: "great"
         }
+    }
+
+    componentDidMount() {
+        let api = process.env.REACT_APP_API;
+        let data = {
+            hit: parseInt(sessionStorage.getItem('hits')),
+            missed: parseInt(sessionStorage.getItem('misses'))
+        }
+        axios.post(api + 'analyze', data)
+            .then((res) => {
+                console.log(res);
+            }).catch((err) => {
+                console.log(err);
+            })
     }
 
     render() {

@@ -13,9 +13,17 @@ class AnalzyeView(APIView):
         hit = body['hit']
         missed = body['missed']
         percentage = body['hit'] / (body['hit'] + body['missed'])
+        status = None
+        if (percentage < .4):
+            status = "Bad"
+        elif (percentage < .7):
+            status = "Decent"
+        else:
+            status = "Good"
         return Response({
             'hit': hit,
             'missed': missed,
-            'hitPercentage': percentage
+            'hitPercentage': percentage,
+            'status': status
         })
 

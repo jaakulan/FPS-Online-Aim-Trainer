@@ -45,8 +45,10 @@ export default class Training extends Component {
             if (this.state.timer === 10) {
                 console.log(this.state.totalClicks);
                 console.log(this.state.totalWins);
+                sessionStorage.setItem('hits', this.state.totalWins);
+                sessionStorage.setItem('misses', (this.state.totalClicks - this.state.totalWins));
                 //uncomment below if you want to redirect
-                //this.setState({ redirect: true });
+                this.setState({ redirect: true });
             }
         }, 1000)
     }
@@ -130,7 +132,7 @@ export default class Training extends Component {
             width: "100px",
         }
         if (this.state.redirect) {
-            return <Redirect to="/starter" />
+            return <Redirect to="/results" />
         }
         return (  
             <div className={styles.main} style={crossHairStyle} onClick={this.countClicks} onContextMenu={(e)=> e.preventDefault()}  >
