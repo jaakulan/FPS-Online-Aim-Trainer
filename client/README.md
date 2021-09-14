@@ -2,6 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Readme File
+To run this client and connect it with the local server, you will need a readme file with the following information
+REACT_APP_API=http://127.0.0.1:8000/
+You will need the server running to connect the client to it
+
 ## Available Scripts
 
 In the project directory, you can run:
