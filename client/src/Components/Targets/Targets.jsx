@@ -81,7 +81,7 @@ export default class Targets extends Component {
                     </div>
                 </div>
                 <div className={styles.next}>
-                    <a href="/settings" className={styles.link} onClick={(e) => {sessionStorage.setItem('target', this.state.target)}}>Next</a>
+                    <a href="/transition" className={styles.link} onClick={(e) => {sessionStorage.setItem('target', this.state.target)}}>Next</a>
                 </div>
             </div>
         )
