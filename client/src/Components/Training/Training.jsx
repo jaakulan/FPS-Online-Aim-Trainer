@@ -43,11 +43,8 @@ export default class Training extends Component {
         setInterval(() => {
             this.setState({ timer: this.state.timer + 1})
             if (this.state.timer === 10) {
-                console.log(this.state.totalClicks);
-                console.log(this.state.totalWins);
                 sessionStorage.setItem('hits', this.state.totalWins);
                 sessionStorage.setItem('misses', (this.state.totalClicks - this.state.totalWins));
-                //uncomment below if you want to redirect
                 this.setState({ redirect: true });
             }
         }, 1000)

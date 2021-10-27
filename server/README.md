@@ -1,8 +1,7 @@
 # Django Backend
 
 ## Requirements to install
-pip install django
-pip install djangorestframework
+pip install -r requirements.txt
 
 ## To Start project
 go to root directory with manage.py file and run command 'python3 manage.py runserver'
