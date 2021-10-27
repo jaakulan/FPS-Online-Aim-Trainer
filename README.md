@@ -9,8 +9,12 @@ Django was the appropriate choice for the backend
 
 ------------------------------------------------------------------------------------------------------
 Instructions:
-The client runs on the local instance of localhost:3000
-The server runs on the local instance of localhost:8000
+Deployed:
+The client is deployed at: https://main.d37zyque0vjvy3.amplifyapp.com/
+
+Locally:  
+The client runs on the local instance of localhost:3000  
+The server runs on the local instance of localhost:8000  
   
 ------------------------------------------------------------------------------------------------------
 Enjoy And Go Crazy!
