@@ -24,6 +24,7 @@ jobs:
     
     - name: Testing for Production
       timeout-minutes: 5
+      working-directory: ./client
       run: |
           npm ci
-          npm test
+          npm test a
