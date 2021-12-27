@@ -56,6 +56,7 @@ export default class Training extends Component {
     intervalSetter = async () => {
         let intervalSetter = setInterval(() => {
             this.setImage();
+            this.state.totalClicks += 1; // Makes sure that missed targets counts as misses.
         }, this.state.seconds);
         this.setState({ interval: intervalSetter })
     }
