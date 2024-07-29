@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import styles from "./Transition.module.css";
 import backgroundImage from "../../Assets/Images/BackgroundImage.png";
 
@@ -33,7 +33,7 @@ export default class Transition extends Component {
 
     render() {
         if (this.state.redirect) {
-            return <Redirect to="/training" />
+            return <Navigate to="/training" />
         }
         return (
             <div className={styles.main}>

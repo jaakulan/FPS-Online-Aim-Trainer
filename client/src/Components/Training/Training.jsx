@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styles from "./Training.module.css";
 import target from "../../Assets/Targets/babylion.png";
-import { Redirect } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import hit from "../../Assets/Sounds/hit.mp3";
 import miss from "../../Assets/Sounds/miss.mp3";
 
@@ -130,7 +130,7 @@ export default class Training extends Component {
             width: "100px",
         }
         if (this.state.redirect) {
-            return <Redirect to="/results" />
+            return <Navigate to="/results" />
         }
         return (  
             <div className={styles.main} style={crossHairStyle} onClick={this.countClicks} onContextMenu={(e)=> e.preventDefault()}  >
