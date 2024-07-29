@@ -14,7 +14,7 @@ export default class Starter extends Component {
     render() {
         return (
             <div className={styles.main}>
-                <img src={starterImage} className={styles.image}/>
+                <img src={starterImage} className={styles.image} alt="Starter Image"/>
                 <div className={styles.title} >
                     THE BEST ONLINE FPS AIM TRAINER
                 </div>
