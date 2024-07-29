@@ -1,16 +1,15 @@
 import React, { useState, Component } from "react";
-import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import Slider from '@material-ui/core/Slider';
-import Input from '@material-ui/core/Input';
-import { createMuiTheme } from '@material-ui/core/styles';
-import { ThemeProvider } from '@material-ui/styles';
+import Grid from '@mui/material/Grid';
+import { Typography } from "@mui/material";
+import { Slider } from "@mui/material";
+import { Input } from "@mui/material";
+import { ThemeProvider } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles';
 import backgroundImage from "../../Assets/Images/BackgroundImage.png";
 import styles from "./Settings.module.css";
 
 
-const muiTheme = createMuiTheme({
+const muiTheme = createTheme({
   overrides:{
     MuiSlider: {
       thumb:{
@@ -27,14 +26,7 @@ const muiTheme = createMuiTheme({
 }
 });
 
-const useStyles = makeStyles({
-    root: {
-      width: 700,
-    },
-    input: {
-      width: 42,
-    },
-  });
+
   
 /**
  * Settings is a component that allows users to select the
@@ -42,7 +34,6 @@ const useStyles = makeStyles({
  * saves the selections in sessionStorage.
  */
 export default function Settings() {
-  const classes = useStyles();
   const [speed, setSpeed] = useState(0);
   const [size, setSize] = useState(0);
 
@@ -90,7 +81,7 @@ export default function Settings() {
               Choose your Speed and Size for targets!
               <hr />
           </div>
-          <div className={`${classes.root} ${styles.sliderspace}`}>
+          <div className={`${styles.sliderspace}`}>
               <Typography id="input-slider" gutterBottom className={styles.labels}>
                 <p className={styles.labels}>Speed</p>
               </Typography>
@@ -122,7 +113,7 @@ export default function Settings() {
               </Grid>
               </Grid>
           </div>
-          <div className={`${classes.root} ${styles.sliderspace}`}>
+          <div className={`${styles.sliderspace}`}>
               <Typography id="input-slider" gutterBottom >
                 <p className={styles.labels}>Size</p>
               </Typography>
