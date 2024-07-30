@@ -36,37 +36,37 @@ export default class CrossHair extends Component {
                     Made by us
                     <hr className= {styles.subtitle_line}/>
                     <div className={styles.crosshairContainer}>
-                        <input type="image" src={c} className={styles.crosshair} onClick={(e) => {this.setState({ crosshair: "https://i.imgur.com/B4Wqdch.png?1"})}}/>
-                        <input type="image" src={c1} className={styles.crosshair} onClick={(e) => {this.setState({ crosshair: "https://i.imgur.com/QqgyVny.png?1" })}}/>
-                        <input type="image" src={c2} className={styles.crosshair} onClick={(e) => {this.setState({ crosshair: "https://i.imgur.com/CGe7Idr.png?1" })}}/>
-                        <input type="image" src={c3} className={styles.crosshair} onClick={(e) => {this.setState({ crosshair: "https://i.imgur.com/vWYHOhu.png" })}}/>
-                        <input type="image" src={cCircle} className={styles.crosshair} onClick={(e) => {this.setState({ crosshair: "https://i.imgur.com/BohUAel.png?1" })}}/>
-                        <input type="image" src={cCsgo} className={styles.crosshair} onClick={(e) => {this.setState({ crosshair: "https://i.imgur.com/evWwlKT.png?1" })}}/>
-                        <input type="image" src={cdot} className={styles.crosshair} onClick={(e) => {this.setState({ crosshair: "https://i.imgur.com/UFtGxlr.png?1"})}}/>
-                        <input type="image" src={cEncircled} className={styles.crosshair} onClick={(e) => {this.setState({ crosshair: "https://i.imgur.com/ECL1Xhu.png?1" })}}/>
-                        <input type="image" src={cExtra} className={styles.crosshair} onClick={(e) => {this.setState({ crosshair: "https://i.imgur.com/y451vhK.png?1" })}}/>
-                        <input type="image" src={csniper} className={styles.crosshair} onClick={(e) => {this.setState({ crosshair: "https://i.imgur.com/922UfUJ.png?1" })}}/>
+                        <input type="image" src={c} className={styles.crosshair} onClick={() => {this.setState({ crosshair: "https://i.imgur.com/B4Wqdch.png?1"})}}/>
+                        <input type="image" src={c1} className={styles.crosshair} onClick={() => {this.setState({ crosshair: "https://i.imgur.com/QqgyVny.png?1" })}}/>
+                        <input type="image" src={c2} className={styles.crosshair} onClick={() => {this.setState({ crosshair: "https://i.imgur.com/CGe7Idr.png?1" })}}/>
+                        <input type="image" src={c3} className={styles.crosshair} onClick={() => {this.setState({ crosshair: "https://i.imgur.com/vWYHOhu.png" })}}/>
+                        <input type="image" src={cCircle} className={styles.crosshair} onClick={() => {this.setState({ crosshair: "https://i.imgur.com/BohUAel.png?1" })}}/>
+                        <input type="image" src={cCsgo} className={styles.crosshair} onClick={() => {this.setState({ crosshair: "https://i.imgur.com/evWwlKT.png?1" })}}/>
+                        <input type="image" src={cdot} className={styles.crosshair} onClick={() => {this.setState({ crosshair: "https://i.imgur.com/UFtGxlr.png?1"})}}/>
+                        <input type="image" src={cEncircled} className={styles.crosshair} onClick={() => {this.setState({ crosshair: "https://i.imgur.com/ECL1Xhu.png?1" })}}/>
+                        <input type="image" src={cExtra} className={styles.crosshair} onClick={() => {this.setState({ crosshair: "https://i.imgur.com/y451vhK.png?1" })}}/>
+                        <input type="image" src={csniper} className={styles.crosshair} onClick={() => {this.setState({ crosshair: "https://i.imgur.com/922UfUJ.png?1" })}}/>
                     </div>
                 </div>
                 <div className={styles.rowContent}>
                     CSGO
                     <hr className= {styles.subtitle_line}/>
                     <div className={styles.crosshairContainer}>
-                        <input type="image" src={cCsgo} className={styles.crosshair} onClick={(e) => {this.setState({ crosshair: "cCsgo" })}}/>
-                        <input type="image" src={cdot} className={styles.crosshair} onClick={(e) => {this.setState({ crosshair: "cdot" })}}/>
-                        <input type="image" src={c} className={styles.crosshair} onClick={(e) => {this.setState({ crosshair: "c" })}}/>
+                        <input type="image" src={cCsgo} className={styles.crosshair} onClick={() => {this.setState({ crosshair: "cCsgo" })}}/>
+                        <input type="image" src={cdot} className={styles.crosshair} onClick={() => {this.setState({ crosshair: "cdot" })}}/>
+                        <input type="image" src={c} className={styles.crosshair} onClick={() => {this.setState({ crosshair: "c" })}}/>
                     </div>
                 </div>
                 <div className={styles.rowContent}>
                     Valorant
                     <hr className= {styles.subtitle_line}/>
                     <div className={styles.crosshairContainer}>
-                        <input type="image" src={cdot} className={styles.crosshair} onClick={(e) => {this.setState({ crosshair: "cdot" })}}/>
-                        <input type="image" src={c} className={styles.crosshair} onClick={(e) => {this.setState({ crosshair: "c" })}}/>
+                        <input type="image" src={cdot} className={styles.crosshair} onClick={() => {this.setState({ crosshair: "cdot" })}}/>
+                        <input type="image" src={c} className={styles.crosshair} onClick={() => {this.setState({ crosshair: "c" })}}/>
                     </div>
                 </div>
                 <div className={styles.next}>
-                    <a href="/targets" className={styles.link} onClick={(e) => {sessionStorage.setItem('crosshair', this.state.crosshair)}}>Next</a>
+                    <a href="/targets" className={styles.link} onClick={() => {sessionStorage.setItem('crosshair', this.state.crosshair)}}>Next</a>
                 </div>
             </div>
         )

@@ -39,12 +39,13 @@ export default class Results extends Component {
     }
 
     render() {
+        var image
         if (this.state.comp === "Bad") {
-            var image = sad;
+            image = sad;
           } else if(this.state.comp === "Decent"){
-            var image = okay;
+            image = okay;
           } else {
-            var image = smile;
+            image = smile;
           }
 
         return (

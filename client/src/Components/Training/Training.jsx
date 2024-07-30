@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import styles from "./Training.module.css";
-import target from "../../Assets/Targets/babylion.png";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import hit from "../../Assets/Sounds/hit.mp3";
 import miss from "../../Assets/Sounds/miss.mp3";
 
@@ -28,6 +27,15 @@ export default class Training extends Component {
             timer: 0,
         }
         this.myRef = React.createRef();
+        
+        this.countdownTimer = this.countdownTimer.bind(this);
+        this.intervalSetter = this.intervalSetter.bind(this);
+        this.setImage = this.setImage.bind(this);
+        this.countClicks = this.countClicks.bind(this);
+        this.countWins = this.countWins.bind(this);
+        this.timeoutSetter = this.timeoutSetter.bind(this);
+        this.setMargins = this.setMargins.bind(this);
+        this.setShow = this.setShow.bind(this);
     }
 
     componentDidMount(){
@@ -39,7 +47,7 @@ export default class Training extends Component {
      * Adds timer to the page to redirect after a certain number of seconds,
      * defined by the timer variable
      */
-    countdownTimer = () => {
+    countdownTimer() {
         setInterval(() => {
             this.setState({ timer: this.state.timer + 1})
             if (this.state.timer === 10) {
@@ -53,10 +61,10 @@ export default class Training extends Component {
     /**
      * Sets the intervals in which the image should reappear if they are not clicked
      */
-    intervalSetter = async () => {
+    async intervalSetter() {
         let intervalSetter = setInterval(() => {
             this.setImage();
-            this.state.totalClicks += 1; // Makes sure that missed targets counts as misses.
+            this.setState({ totalClicks: this.state.totalClicks + 1})
         }, this.state.seconds);
         this.setState({ interval: intervalSetter })
     }
@@ -65,7 +73,7 @@ export default class Training extends Component {
      * Sets the setter that sets the image once it has been clicked so that it
      * reappears immediately once clicked
      */
-    timeoutSetter = async () => {
+    async timeoutSetter() {
         setTimeout(() => {
             this.setImage();
         }, 0);
@@ -74,7 +82,7 @@ export default class Training extends Component {
     /**
      * Counts number of total clicks by a user
      */
-    countClicks = () => {
+    countClicks() {
         new Audio(miss).play();
         this.setState({ totalClicks: this.state.totalClicks+1});
     }
@@ -83,7 +91,7 @@ export default class Training extends Component {
      * Counts number of targets clicked accurately by a user. Then stops the interval,
      * redeploys the image and starts the interval again.
      */
-    countWins = async () => {
+    async countWins() {
         new Audio(hit).play();
         this.setState({ totalWins: this.state.totalWins+1});
         clearInterval(this.state.interval);
@@ -94,7 +102,7 @@ export default class Training extends Component {
     /**
      * hides image, reapplies random margins, and shows image again
      */
-    setImage = async () => {
+    async setImage() {
         await this.setShow();
         await this.setMargins();
         await this.setShow();
@@ -103,14 +111,14 @@ export default class Training extends Component {
     /**
      * hides/shows image
      */
-    setShow = async () => {
+    async setShow() {
         this.setState({ hide: !this.state.hide });
     }
 
     /**
      * Applies random margins to image
      */
-    setMargins = async () => {
+    async setMargins() {
         this.setState( {
             top: String(Math.floor((Math.random() * 85) + 1)) + "vh",
             left: String(Math.floor((Math.random() * 90) + 1)) + "vw"

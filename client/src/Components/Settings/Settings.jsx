@@ -1,4 +1,4 @@
-import React, { useState, Component } from "react";
+import React, { useState } from "react";
 import Grid from '@mui/material/Grid';
 import { Typography } from "@mui/material";
 import { Slider } from "@mui/material";

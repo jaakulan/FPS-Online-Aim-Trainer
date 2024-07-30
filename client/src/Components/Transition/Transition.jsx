@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import styles from "./Transition.module.css";
-import backgroundImage from "../../Assets/Images/BackgroundImage.png";
 
 /**
  * Transition is a component that is set as an intermediate page
@@ -22,7 +21,7 @@ export default class Transition extends Component {
      * ComponentDidMount in this component is used for the countdown
      */
     componentDidMount() {
-        const timer = setInterval(() =>{
+        this.timer = setInterval(() =>{
             if (this.state.countdown > 0) {
                 this.setState({countdown: this.state.countdown - 1});
             } else if (this.state.countdown === 0) {
