@@ -5,10 +5,6 @@ import Starter from './Starter';
 describe("Starter Page renders correctly", () => {
     it("renders without crashing", () => {
         render(<Starter />);
-    })
-
-    it("renders the title", () => {
-        render(<Starter />);
         expect(screen.getByText("THE BEST ONLINE FPS AIM TRAINER")).toBeInTheDocument();
     })
 
