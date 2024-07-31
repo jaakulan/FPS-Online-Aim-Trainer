@@ -27,5 +27,9 @@ describe("MapPage renders correctly", () => {
         render(<MapPage />);
         expect(screen.getByText("Valorant")).toBeInTheDocument();
     })
+    it("renders next hyperlink", () => {
+        render(<MapPage />);
+        expect(screen.getByText("Next")).toBeInTheDocument();
+    })
 
 })
