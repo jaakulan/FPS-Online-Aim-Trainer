@@ -3,6 +3,8 @@ from django.urls import reverse
 # Create your tests here.
 class Test(TestCase):
 
+    #TODO: #16 Add test cases for if hit + missed > 1, ommitted values and invalid types for fields.
+
     def test_default(self):
         url = reverse('analyze') 
         data = {
