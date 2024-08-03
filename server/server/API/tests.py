@@ -4,7 +4,7 @@ from django.urls import reverse
 class Test(TestCase):
 
     def test(self):
-        url = reverse('127.0.0.1:8000/analyze') 
+        url = reverse('analyze') 
         data = {
             "hit": 0.5,
             "missed": 0.5

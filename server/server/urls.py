@@ -22,6 +22,6 @@ router = routers.DefaultRouter()
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('analyze', views.AnalzyeView.as_view()),
+    path('analyze', views.AnalzyeView.as_view(), name='analyze'),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
